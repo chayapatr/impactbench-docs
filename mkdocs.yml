@@ -1,5 +1,6 @@
 site_name: Open Benchmark of AI Impact on Humans
 site_description: A structured pipeline for running LLM behavioral benchmarks.
+site_url: https://impactbench.media.mit.edu/docs/
 repo_url: https://github.com/chayapatr/impactbench
 repo_name: chayapatr/impactbench
 
