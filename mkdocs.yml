@@ -1,0 +1,67 @@
+site_name: Open Benchmark of AI Impact on Humans
+site_description: A structured pipeline for running LLM behavioral benchmarks.
+repo_url: https://github.com/chayapatr/impactbench
+repo_name: chayapatr/impactbench
+
+theme:
+  name: material
+  custom_dir: overrides
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+  font:
+    text: Inter
+    code: JetBrains Mono
+  palette:
+    scheme: default
+    primary: teal
+    accent: teal
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.instant
+    - content.code.copy
+    - search.suggest
+    - toc.follow
+
+extra_css:
+  - assets/extra.css
+
+extra:
+  generator: false
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - How It Works: about/index.md
+  - Running a Benchmark:
+      - Quickstart: running/quickstart.md
+      - Configuration: running/configuration.md
+      - Providers & cost: running/providers-and-cost.md
+  - Writing a Benchmark:
+      - benchmark.yaml: writing/benchmark-yaml.md
+      - Metric types: writing/metric-types.md
+      - Scenarios & demographics: writing/scenarios-and-demographics.md
+      - Designing good metrics: writing/good-metrics.md
+  - Internals:
+      - Architecture: internals/architecture.md
+      - The decorator stack: internals/decorator-stack.md
+      - Caching & resume: internals/caching-and-resume.md
+      - Output schema: internals/output-schema.md
