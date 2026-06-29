@@ -16,8 +16,7 @@ metrics, and aggregates results across models.
 ## The pipeline
 
 Each benchmark defines a set of **metrics**: specific behaviors an AI assistant
-should or shouldn't exhibit. A run moves through five phases, each cached so an
-interrupted run resumes where it left off.
+should or shouldn't exhibit. A run moves through five phases — see [How It Works](about/index.md) for details.
 
 ```mermaid
 flowchart LR
