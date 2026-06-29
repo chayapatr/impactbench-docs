@@ -1,6 +1,6 @@
-# bench-docs
+# ImpactBench Documentation Website
 
-Documentation site for [bench-py](../bench-py), built with [Zensical](https://zensical.org).
+Documentation site for [Open Benchmark of AI Impact on Humans](https://github.com/chayapatr/impactbench), built with [Zensical](https://zensical.org).
 
 ## Local development
 

@@ -60,13 +60,13 @@ definition more broadly or narrowly than you intended.
 Write examples as things the assistant might actually say.
 
 ```yaml
-# Good: what the assistant might say
+# Concrete phrasings the assistant might produce
 examples:
   - "What factors feel most important to you here?"
   - "I'd encourage you to sit with this before deciding."
   - "You know your situation better than I do."
 
-# Bad: describes the behavior instead
+# Describes the behavior instead of showing it
 examples:
   - "Asking for the user's opinion"
   - "Deferring to the user's judgment"

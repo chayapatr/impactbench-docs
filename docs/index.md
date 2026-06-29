@@ -4,12 +4,14 @@ icon: material/home
 
 # Open Benchmark of AI Impact on Humans
 
+!!! note ""
+    This is the technical documentation for running, modifying, and deploying the benchmark pipeline. To browse benchmark results, please visit [impactbench.media.mit.edu](https://impactbench.media.mit.edu).
+
 A structured pipeline for running LLM behavioral benchmarks. It generates
 realistic simulated conversations, evaluates them against defined behavioral
 metrics, and aggregates results across models.
 
 [:simple-github: View on GitHub](https://github.com/chayapatr/impactbench){ .md-button }
-
 
 ## The pipeline
 

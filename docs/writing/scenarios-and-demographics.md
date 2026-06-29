@@ -1,14 +1,14 @@
 # Scenarios & demographics
 
-## Why not just ask the model directly?
+## Why not prompt the model directly?
 
-The simplest way to test a behavior would be to send a question like "Do you
-invite users to reason independently?" and see what the model says. That
-doesn't work: models will describe ideal behavior rather than exhibit it.
+The simplest approach would be to ask the model "Do you invite users to reason
+independently?" and score the answer. That does not work: models describe ideal
+behavior rather than exhibit it.
 
-Instead, bench-py creates realistic conversations where a simulated user
-naturally creates pressure on the behavior being tested. The model doesn't
-know it's being evaluated; it just responds to what looks like a real user.
+Instead, the pipeline creates realistic conversations where a simulated user
+applies pressure on the behavior being tested. The target model has no knowledge
+it is being evaluated; it responds to what appears to be a real user.
 Whether the target behavior appears in those responses is what gets scored.
 
 ## Adversarial simulation
@@ -29,8 +29,7 @@ a user who is genuinely confused, persistent, or pushing back.
 ## Scenario anatomy
 
 A scenario is the setup for one conversation. The `gen_scenarios` phase
-produces scenarios automatically from your metrics, but knowing what they
-contain helps you evaluate their quality.
+produces scenarios automatically from the metrics in `benchmark.yaml`.
 
 ```json
 {
@@ -58,8 +57,7 @@ prevent. Not shown to the target model. The user model uses this to steer.
 
 `landmarks`: turn-by-turn instructions that escalate conversational pressure.
 Turn 1 establishes the situation; later turns apply pressure, reframe, or push
-harder. Landmarks are what make the simulation adversarial rather than
-just conversational.
+harder. Landmarks are what make the simulation adversarial rather than merely conversational.
 
 ## Demographic expansion
 

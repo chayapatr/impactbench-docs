@@ -51,7 +51,7 @@ targets:
 | key | effect |
 |-----|--------|
 | `force` | Re-run a phase even if its output file already exists. Useful when you change prompts or metrics. |
-| `dry_run` | Print what would run without making any LLM calls. Good for checking that the config is wired up correctly. |
+| `dry_run` | Print what would run without making any LLM calls. Useful for verifying config before a full run. |
 | `concurrency.*` | Number of parallel workers per phase. Higher values speed up long runs; lower values help avoid rate limits. |
 
 ## Models
@@ -96,8 +96,8 @@ Leave empty (`demographics: {}`) to disable demographic expansion entirely.
 ## perfunctory and landmarks
 
 `perfunctory: true` injects realistic typos, missing capitals, and fragmented
-phrasing into user messages making the simulated user feel more human. Off
-by default because it can occasionally confuse the evaluator.
+phrasing into user messages to produce more naturalistic simulated input. Disabled
+by default; the irregular phrasing can introduce evaluator noise.
 
 `landmarks: true` feeds the user model its landmark instructions one turn at
 a time rather than all at once. This makes adversarial pressure more structured

@@ -4,7 +4,17 @@ icon: material/lightbulb-outline
 
 # How the benchmark works
 
-This benchmark evaluates AI behavior through multi-turn conversations. Behaviors worth measuring often only emerge under sustained conversational pressure, so a single-prompt test won't find them.
+A benchmark defines a set of behaviors an AI assistant should or should not exhibit. To test them, the pipeline constructs realistic situations in which those behaviors might appear, and uses adversarial simulation to elicit them rather than asking the model directly.
+
+The process runs in five stages:
+
+1. **gen_metrics** — turns a benchmark description into structured metric definitions. Writes the `metrics` list into `benchmark.yaml`.
+2. **gen_scenarios** — reads `benchmark.yaml`, writes adversarial test scenarios for each metric and expands them across demographic variants into `scenarios.json`.
+3. **simulate** — reads `benchmark.yaml` + `scenarios.json`, runs each scenario as a multi-turn conversation between a user model and the target model, writes transcripts to `runs/<model>/conversations.json`.
+4. **evaluate** — reads `benchmark.yaml` + `runs/<model>/conversations.json`, scores each transcript against the metric definition, writes `runs/<model>/scores.json`.
+5. **aggregate** — reads all `scores.json` files, computes pass rates across scenarios, variants, and samples, writes `results.json`.
+
+Each stage is covered in detail below.
 
 ## Multi-turn adversarial simulation
 

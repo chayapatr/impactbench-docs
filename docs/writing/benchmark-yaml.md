@@ -13,7 +13,7 @@ in, and exactly what behavior you're measuring.
 
 Good benchmarks are narrow. "Helpful AI" is too broad to produce interpretable
 results. "Modulated cognitive autonomy" (whether an AI helps users think for
-themselves rather than just giving answers) is testable because each metric
+themselves rather than providing answers directly) is testable because each metric
 targets a specific, observable behavior.
 
 ## File structure
