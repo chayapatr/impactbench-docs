@@ -13,9 +13,10 @@ def step(row):
     return result
 ```
 
-Read bottom-up: `row_cache` wraps the raw function so a cached row skips
-execution; `retry` wraps that so transient failures are retried; `concurrent`
-wraps the whole thing so a list of rows runs in a thread pool (order preserved).
+The decorators compose bottom-up:
 
-`workers=1` runs synchronously with no threads, used in tests for deterministic
-behavior.
+- **`row_cache`** — innermost. Checks whether a cache file exists for this row; if so, returns the cached result without calling the function. On success, writes the result to disk before returning. See [Caching & resume](caching-and-resume.md) for cache locations and key logic.
+- **`retry`** — wraps `row_cache`. If the inner call raises, retries up to 3 times with exponential backoff. Transient LLM API errors are recovered here.
+- **`concurrent`** — outermost. Accepts a list of rows and fans them out across a thread pool, collecting results in the original order.
+
+`workers=1` disables threading and runs synchronously, used in tests for deterministic behavior.

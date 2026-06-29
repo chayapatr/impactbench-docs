@@ -53,17 +53,7 @@ main.py          CLI entry point
 config.yaml      models, concurrency, generation settings, target list
 ```
 
-Each pipeline phase wraps its core function in three decorators:
-
-```python
-@concurrent(workers)   # fan out over rows in a thread pool
-@retry(3)              # retry on failure with exponential backoff
-@row_cache(cache_dir)  # skip rows already on disk
-def step(row): ...
-```
-
-Every phase is resumable, parallel, and fault-tolerant with no phase-specific
-code for any of it. See [The decorator stack](internals/decorator-stack.md).
+Every phase is resumable, parallel, and fault-tolerant. See [The decorator stack](internals/decorator-stack.md).
 
 ## Where to go next
 
