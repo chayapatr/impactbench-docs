@@ -1,6 +1,8 @@
-# ImpactBench Documentation Website
+# Open Benchmark of AI Impact on Humans
 
-Documentation site for [Open Benchmark of AI Impact on Humans](https://github.com/chayapatr/impactbench), built with [Zensical](https://zensical.org).
+[Pipeline](https://github.com/chayapatr/impactbench) · [Website](https://github.com/chayapatr/impactbench-web) · [Documentation (This repo)](https://github.com/chayapatr/impactbench-docs)
+
+Documentation site for [ImpactBench](https://github.com/chayapatr/impactbench), built with [Zensical](https://zensical.org).
 
 ## Local development
 
